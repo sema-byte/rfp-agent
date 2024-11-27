@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Upload and Extraction</title>
+
+    <!-- Include both CSS files -->
+    <!-- <link rel="stylesheet" href="/static/style.css"> -->
+    <link rel="stylesheet" href="/static/extract-style.css">
+</head>
+<body>
+    <div class="container">
+
+        <!-- Upload and Extract Section -->
+        <div class="upload-extract-section">
+            <h2 class="section-title">Upload and Extract Requirements</h2>
+
+            <div id="spinner" class="spinner hidden">Loading...</div> <!-- Spinner here -->
+            
+            <!-- File upload form -->
+            <input type="file" id="fileInput">
+            <button id="uploadFileBtn" class="upload-btn" disabled>Upload File</button>
+        </div>
+
+        <!-- Extracted Requirements Section -->
+        <div id="extractSection" class="section">
+            <h2>Extracted Requirements</h2>
+            <table id="requirementsTable">
+                <tbody id="requirementsList"></tbody>
+            </table>
+            <p id="noRequirementsMessage">No requirements extracted.</p>
+        </div>
+
+        <!-- "Go to Drafting Page" Button -->
+        <div class="section">
+            <button id="go-to-drafting">Go to Drafting Page</button>
+        </div>
+
+    </div>
+
+    <!-- Include JavaScript file -->
+    <script src="/static/extract-script.js"></script>
+</body>
+</html>

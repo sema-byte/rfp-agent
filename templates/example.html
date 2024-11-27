@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spinner and Table Example</title>
+    <style>
+        /* Spinner styling */
+        #spinner {
+            display: none; /* Initially hidden */
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50px;
+            height: 50px;
+            border: 6px solid rgba(0, 0, 0, 0.1);
+            border-top: 6px solid #007bff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            z-index: 1000;
+        }
+
+        /* Spinner animation */
+        @keyframes spin {
+            0% {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+            100% {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+
+        /* Table styling */
+        #requirementsTable {
+            display: none; /* Initially hidden */
+            margin: 20px auto;
+            border-collapse: collapse;
+            width: 80%;
+            border: 1px solid #ddd;
+        }
+
+        #requirementsTable th,
+        #requirementsTable td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        #requirementsTable th {
+            background-color: #f4f4f4;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <button id="startProcessBtn">Start Process</button>
+    </div>
+
+    <div id="spinner"></div>
+
+    <table id="requirementsTable">
+        <thead>
+            <tr>
+                <th>Requirement</th>
+            </tr>
+        </thead>
+        <tbody id="requirementsList">
+            <!-- Rows will be dynamically added here -->
+        </tbody>
+    </table>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const startProcessBtn = document.getElementById("startProcessBtn");
+            const spinner = document.getElementById("spinner");
+            const requirementsTable = document.getElementById("requirementsTable");
+            const requirementsList = document.getElementById("requirementsList");
+
+            // Show spinner
+            function showSpinner() {
+                spinner.style.display = "block";
+            }
+
+            // Hide spinner
+            function hideSpinner() {
+                spinner.style.display = "none";
+            }
+
+            // Simulate processing and display table
+            startProcessBtn.addEventListener("click", function () {
+                // Show spinner
+                showSpinner();
+
+                // Simulate a delay (e.g., fetching data)
+                setTimeout(() => {
+                    // Add sample requirements
+                    const requirements = ["Requirement 1", "Requirement 2", "Requirement 3"];
+
+                    requirementsList.innerHTML = ""; // Clear any existing rows
+                    requirements.forEach(req => {
+                        const row = document.createElement("tr");
+                        const cell = document.createElement("td");
+                        cell.textContent = req;
+                        row.appendChild(cell);
+                        requirementsList.appendChild(row);
+                    });
+
+                    // Show the table and hide the spinner
+                    requirementsTable.style.display = "table";
+                    hideSpinner();
+                }, 2000); // Simulate a 2-second delay
+            });
+        });
+    </script>
+</body>
+</html>

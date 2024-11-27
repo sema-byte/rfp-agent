@@ -1,0 +1,219 @@
+/* General container styling */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the content horizontally */
+    justify-content: center;
+    min-height: 100vh; /* Ensure it covers the full viewport height */
+    padding: 20px;
+}
+
+/* Styling for the Upload and Extract Section */
+.upload-extract-section {
+    width: 100%;
+    max-width: 800px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.upload-extract-section h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+/* Title and Button Styling */
+.upload-extract-section .section-title {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.upload-btn {
+    background-color: #3498db;  /* Example: Green background */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+.upload-btn:disabled {
+    background-color: #a1cdf7;
+    cursor: not-allowed;
+}
+
+
+.upload-btn:hover {
+    background-color: #2980b9;
+}
+
+/* Focus Effect */
+.upload-btn:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.8); /* Light blue glow effect */
+}
+
+
+#go-to-drafting {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+#go-to-drafting:hover {
+    background-color: #45a049;
+}
+
+.spinner {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #ffffff;
+    border-radius: 8px;
+    font-size: 18px;
+    visibility: hidden; /* Initially hidden */
+    opacity: 0; /* Initially transparent */
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out; /* Transition both opacity and visibility */
+}
+
+.spinner.show {
+    visibility: visible; /* Show spinner */
+    opacity: 1; /* Make it fully opaque */
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+
+
+/* File input styling */
+input[type="file"] {
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #3498db;
+    border-radius: 5px;
+    background-color: #f0f8ff;
+    cursor: pointer;
+    width: 100%;
+    max-width: 400px;
+}
+
+input[type="file"]:hover {
+    border-color: #2980b9;
+}
+
+/* Extracted Requirements Section */
+#extractSection {
+    width: 100%;
+    max-width: 800px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+#extractSection h2 {
+    font-size: 24px;
+    text-align: center;
+}
+
+
+.requirementsTable.hidden {
+    opacity: 0;
+    visibility: hidden; /* Keeps the element in the layout but makes it invisible */
+    transition: opacity 0.5s ease-in-out; /* Smooth fade effect */
+}
+
+
+/* Styling the table */
+#requirementsTable {
+    width: 100%;
+    max-width: 800px;
+    margin-top: 20px;
+    border-collapse: collapse;
+    display: table;
+    border: 1px solid #ddd;
+    transition: opacity 0.5s ease-in-out;
+
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Add smooth transition for table rows */
+#requirementsTable tr {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+#requirementsTable tr.show {
+    opacity: 1;
+}
+
+/* Add hover effect for table rows */
+#requirementsTable tr:hover {
+    background-color: #f2f2f2;
+}
+
+#requirementsTable td, #requirementsTable th {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+/* No requirements message */
+#noRequirementsMessage {
+    display: none;
+    color: #e74c3c;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Title for the "Upload Document" section */
+#uploadTitle {
+    font-size: 26px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Add some spacing around sections */
+.section {
+    margin-bottom: 30px;
+}
+
+
+
+
+
+/* Title for the page */
+title {
+    font-size: 26px;
+    text-align: center;
+    margin-bottom: 20px;
+}

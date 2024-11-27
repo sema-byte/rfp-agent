@@ -1,0 +1,22 @@
+project_root/
+│
+├── app.py                    # Main Flask application
+├── requirements.txt          # Dependencies
+│
+├── utils/
+│   └── unstructured_pdf.py   # Contains `unstructured_pdf` function
+│
+├── agents/
+│   ├── agent_technical.py    # Handles technical requirements extraction
+│   ├── agent_general.py      # Handles other LLM agents
+│   └── __init__.py           # Makes the folder a package
+│
+├── static/
+│   ├── css/                  # CSS stylesheets
+│   ├── js/                   # Frontend JavaScript
+│   └── assets/               # Other assets (e.g., images, icons)
+│
+└── templates/
+    ├── index.html            # Home page
+    ├── rfp_analysis.html     # RFP analysis page
+    └── base.html             # Shared base layout
