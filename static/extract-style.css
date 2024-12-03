@@ -20,9 +20,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow: auto;
 }
 
 .upload-extract-section h2 {
+    font-family: Arial, Helvetica, sans-serif;
     margin-bottom: 10px;
     font-size: 24px;
 }
@@ -54,9 +56,9 @@
 }
 
 
-.upload-btn:hover {
+/* .upload-btn:hover {
     background-color: #2980b9;
-}
+} */
 
 /* Focus Effect */
 .upload-btn:focus {
@@ -80,7 +82,19 @@
     background-color: #45a049;
 }
 
+/* Spinner Styles */
 .spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 2s linear infinite;
+    margin: 20px auto;
+}
+
+/* Spinner container styling */
+.spinner-container {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -92,18 +106,21 @@
     font-size: 18px;
     visibility: hidden; /* Initially hidden */
     opacity: 0; /* Initially transparent */
-    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out; /* Transition both opacity and visibility */
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
 }
 
-.spinner.show {
-    visibility: visible; /* Show spinner */
-    opacity: 1; /* Make it fully opaque */
+.spinner-container .spinner {
     animation: spin 1s linear infinite;
 }
 
-@keyframes spin {
+/* @keyframes spin {
     0% { transform: translate(-50%, -50%) rotate(0deg); }
     100% { transform: translate(-50%, -50%) rotate(360deg); }
+} */
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 
@@ -139,10 +156,15 @@ input[type="file"]:hover {
 }
 
 #extractSection h2 {
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 24px;
     text-align: center;
 }
 
+
+.hidden {
+    display: none;
+}
 
 .requirementsTable.hidden {
     opacity: 0;

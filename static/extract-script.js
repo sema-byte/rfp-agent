@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
     const fileInput = document.getElementById("fileInput");
     const uploadFileBtn = document.getElementById("uploadFileBtn");
-    const spinner = document.getElementById("spinner");
+    // const spinner = document.getElementById("spinner");
+    const uploadExtractSection = document.getElementById('upload-extract');
     const requirementsTable = document.getElementById("requirementsTable");
     const requirementsList = document.getElementById("requirementsList");
     const noRequirementsMessage = document.getElementById("noRequirementsMessage");
@@ -9,15 +10,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let uploadedFile = null;
 
-    // Show spinner
-    function showSpinner() {
-        spinner.classList.remove("hidden");
-    }
+    // // Show spinner
+    // function showSpinner() {
+    //     spinner.classList.add("show");
+    // }
 
-    // Hide spinner
-    function hideSpinner() {
-        spinner.classList.add("hidden");
-    }
+    // // Hide spinner
+    // function hideSpinner() {
+    //     spinner.classList.remove("show");
+    // }
 
     // Handle file selection
     fileInput.addEventListener("change", function (e) {
@@ -28,7 +29,12 @@ document.addEventListener("DOMContentLoaded", function () {
     // Handle file upload button click
     uploadFileBtn.addEventListener("click", function () {
         if (uploadedFile) {
-            showSpinner(); // Show loading spinner while processing the file
+            const spinner = document.createElement('div');
+            spinner.classList.add('spinner');
+            uploadExtractSection.appendChild(spinner);
+            // showSpinner(); // Show loading spinner while processing the file
+            
+            
 
             // FormData to send file in the request
             const formData = new FormData();
@@ -80,7 +86,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 alert(error.message || "An error occurred.");
             })
             .finally(() => {
-                hideSpinner(); // Hide spinner after the process is done
+                // hideSpinner(); // Hide spinner after the process is done
+                var delayInMilliseconds = 3000; //1 second
+
+                setTimeout(function() {
+                //your code to be executed after 1 second
+                spinner.remove()
+                }, delayInMilliseconds);
+                
             });
         } else {
             alert("Please select a file first.");
@@ -95,9 +108,4 @@ document.addEventListener("DOMContentLoaded", function () {
         window.location.href = "/drafting";  // Adjust the URL to your drafting page
     });
 });
-
-
-console.log("Table element:", requirementsTable);
-console.log("List element:", requirementsList);
-console.log("Message element:", noRequirementsMessage);
 
