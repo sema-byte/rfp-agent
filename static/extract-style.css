@@ -239,3 +239,71 @@ title {
     text-align: center;
     margin-bottom: 20px;
 }
+
+
+
+.progress-bar-container {
+    width: 80%;
+    height: 20px;
+    background-color: #f3f3f3;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 1000;
+    margin-top: 10px;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background-color: #4caf50;
+    transition: width 0.3s ease-in-out;
+}
+
+
+.ocr-extract-btn {
+    background-color: #3498db;  /* Example: Green background */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+.ocr-extract-btn:disabled {
+    background-color: #a1cdf7;
+    cursor: not-allowed;
+}
+
+/* OCR-EXTRACT section */
+.ocr-extract-section {
+    width: 100%;
+    max-width: 800px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: auto;
+}
+
+.ocr-extract-section h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+/* Title and Button Styling */
+.ocr-extract-section .section-title {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 20px;
+}
