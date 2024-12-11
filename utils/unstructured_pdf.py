@@ -1,4 +1,4 @@
-from langchain_unstructured import UnstructuredLoader
+# from langchain_unstructured import UnstructuredLoader
 
 
 # Process pdf with unstructured
@@ -15,19 +15,20 @@ def unstructured_pdf(filepath):
     """
 
 
-    loader_local = UnstructuredLoader(
-        file_path=filepath,
-        # strategy="hi_res",
-        chunking_strategy="basic",
-        max_characters=1000000,
-        include_orig_elements=False,
-    #     coordinates=True,
-    )
+    # loader_local = UnstructuredLoader(
+    #     file_path=filepath,
+    #     # strategy="hi_res",
+    #     chunking_strategy="basic",
+    #     max_characters=1000000,
+    #     include_orig_elements=False,
+    # #     coordinates=True,
+    # )
 
-    docs_list_of_chunks = []
-    for doc in loader_local.lazy_load():
-        docs_list_of_chunks.append(doc)
+    # docs_list_of_chunks = []
+    # for doc in loader_local.lazy_load():
+    #     docs_list_of_chunks.append(doc)
 
-    text = " ".join(chunk.page_content for chunk in docs_list_of_chunks)
+    # text = " ".join(chunk.page_content for chunk in docs_list_of_chunks)
+    text = "bla bla bla"
     return text
 
