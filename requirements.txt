@@ -1,0 +1,3 @@
+langchain
+unstructured[all-docs]
+flask
