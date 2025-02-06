@@ -1,0 +1,30 @@
+# .gitattributes
+*.pdf binary
+*.pyc binary
+*.pyo binary
+*.pyd binary
+
+# Handle line endings automatically for files detected as text
+* text=auto
+
+# Python files
+*.py text diff=python
+*.pyw text diff=python
+
+# Web files
+*.html text diff=html
+*.css text diff=css
+*.js text
+
+# Documentation
+*.md text diff=markdown
+*.txt text
+*.yaml text
+*.yml text
+
+# Force batch scripts to use CRLF line endings
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Force bash scripts to use LF line endings
+*.sh text eol=lf
